@@ -1,10 +1,13 @@
-import get from './utils/get'
+const { get, add, remove } = require('./utils/requests')
 
 const { argv } = process
 const type = argv[2]
-const urls = argv.slice(3, process.argv.length)
+const urls = argv.slice(3, argv.length)
 
 const randomLink = (type, urls) => {
+
+  const URL = 'http://localhost:3000/newsletters'
+
   const random = (array) => {
     const position = Math.floor(Math.random() * array.length)
     return ({
@@ -13,19 +16,19 @@ const randomLink = (type, urls) => {
     })
   }
 
-  const remove = () => {}
+  const deleteLink = (url, index) => remove(url)(index)
 
-  const get = () => {}
+  const getLink = url => get(url).then(arr => random(arr))
 
-  const post = () => {}
+  const postLink = url => item => add(url)(item)
 
   const options = {
-    post: () => post(urls),
-    undefined: () => {}
+    post: () => ( urls.forEach(ln => postLink(URL)(ln)) ),
+    undefined: () => getLink(URL).then(({ item }) => console.log(item))
   }
 
   return options[type]()
 }
 
-console.log(randomLink(type, urls))
+randomLink(type, urls)
 
