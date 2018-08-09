@@ -1,7 +1,7 @@
 {
   "newsletters": [
     {
-      "link": "https://blog.usejournal.com/10-things-you-will-eve…ally-learn-about-javascript-projects-efd7646b958a",
+      "link": "https://blog.usejournal.com/10-things-you-will-eventually-learn-about-javascript-projects-efd7646b958a",
       "id": "173372e"
     },
     {
@@ -37,15 +37,11 @@
       "id": "7b3cba"
     },
     {
-      "link": "https://www.kitploit.com/2018/04/hijacker-v15-all-…campaign=Feed%3A+PentestTools+%28PenTest+Tools%29",
-      "id": "4e8305"
-    },
-    {
       "link": "https://www.felipefialho.com/blog/2016/sobre-wai-aria-acessibilidade-e-semantica",
       "id": "67987f"
     },
     {
-      "link": "https://evilmartians.com/chronicles/optimizing-rea…&utm_medium=email&utm_source=React_Newsletter_113",
+      "link": "https://evilmartians.com/chronicles/optimizing-react-virtual-dom-explained",
       "id": "18011f7"
     },
     {
@@ -61,7 +57,7 @@
       "id": "5b456fe"
     },
     {
-      "link": "https://itnext.io/a-quick-practical-use-case-for-e…ilding-an-infinitely-repeating-array-49d74f555666",
+      "link": "https://itnext.io/a-quick-practical-use-case-for-es6-generators-building-an-infinitely-repeating-array-49d74f555666",
       "id": "1c17a8"
     },
     {
@@ -249,10 +245,6 @@
       "id": "41e62b5"
     },
     {
-      "link": "https://medium.com/@dan_abramov/you-might-not-need-redux-be46360cf367",
-      "id": "f3ed48"
-    },
-    {
       "link": "https://lingualeo.com/pt/dashboard",
       "id": "4a6bcef"
     },
@@ -329,10 +321,6 @@
       "id": "12c84a9"
     },
     {
-      "link": "https://blog.sessionstack.com/how-javascript-works…how-to-choose-the-proper-storage-api-da50879ef576",
-      "id": "5c2b1d8"
-    },
-    {
       "link": "https://codeburst.io/week-2-tips-javascript-'b7a5d7f65f5c'",
       "id": "1bf6a14"
     },
@@ -391,6 +379,14 @@
     {
       "link": "https://medium.com/@brunn/detecting-autofilled-fields-in-javascript-aed598d25da7",
       "id": "55e3e85"
+    },
+    {
+      "link": "https://medium.com/@dan_abramov/you-might-not-need-redux-be46360",
+      "id": "93d128"
+    },
+    {
+      "link": "https://blog.sessionstack.com/how-javascript-works-storage-engines-how-to-choose-the-proper-storage-api-da50879ef576",
+      "id": "294f5a5"
     }
   ]
 }

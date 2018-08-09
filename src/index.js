@@ -15,12 +15,22 @@ const randomLink = (type, params) => {
 
   const getLink = url => get(url).then(arr => random(arr))
 
-  const addLink = url => link => add(url)({ link, id: uuid() })
+  const postLink = url => link => add(url)({ link, id: uuid() })
 
   const options = {
-    post: () => forEach(params)(ln => addLink(URL)(ln)),
+    post: () => forEach(params)(ln => postLink(URL)(ln)),
     delete: () => forEach(params)(ln => deleteLink(URL)(ln)),
-    undefined: () => getLink(URL).then(({ link }) => console.log(`\n${link}\n`))
+    get: () => {
+      const isDeleted = params[0] === 'true'
+
+      getLink(URL).then(({ link, id }) => {
+        console.log(`\n${link}\n`)
+
+        if (isDeleted) {
+          deleteLink(URL)(id)
+        }
+      })
+    }
   }
 
   return options[type]()
