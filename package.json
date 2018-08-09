@@ -4,8 +4,6 @@
   "description": "A autocomplete component for inputs",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack -w --mode development --module-bind 'js=babel-loader' --output-path='./dist'",
-    "build": "webpack --mode production --module-bind 'js=babel-loader'",
     "start": "json-server -w ./api/newsletters.json"
   },
   "dependencies": {

@@ -1,34 +1,30 @@
 const { get, add, remove } = require('./utils/requests')
+const forEach = require('./utils/forEach')
+const uuid = require('./utils/uuid')
+const random = require('./utils/random')
 
 const { argv } = process
 const type = argv[2]
-const urls = argv.slice(3, argv.length)
+const params = argv.slice(3, argv.length)
 
-const randomLink = (type, urls) => {
+const randomLink = (type, params) => {
 
   const URL = 'http://localhost:3000/newsletters'
 
-  const random = (array) => {
-    const position = Math.floor(Math.random() * array.length)
-    return ({
-      item: array[position],
-      index: position
-    })
-  }
-
-  const deleteLink = (url, index) => remove(url)(index)
+  const deleteLink = url => id => remove(url)(id)
 
   const getLink = url => get(url).then(arr => random(arr))
 
-  const postLink = url => item => add(url)(item)
+  const addLink = url => link => add(url)({ link, id: uuid() })
 
   const options = {
-    post: () => ( urls.forEach(ln => postLink(URL)(ln)) ),
-    undefined: () => getLink(URL).then(({ item }) => console.log(item))
+    post: () => forEach(params)(ln => addLink(URL)(ln)),
+    delete: () => forEach(params)(ln => deleteLink(URL)(ln)),
+    undefined: () => getLink(URL).then(({ link }) => console.log(`\n${link}\n`))
   }
 
   return options[type]()
 }
 
-randomLink(type, urls)
+randomLink(type, params)
 
